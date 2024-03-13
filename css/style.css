@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Light-Cyan: hsl(193, 38%, 86%);
+  --Neon-Green: hsl(150, 100%, 66%);
+  --Grayish-Blue: hsl(217, 19%, 38%);
+  --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+  --Dark-Blue: hsl(218, 23%, 16%);
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--Dark-Blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  text-align: center;
+  border-radius: 10px;
+  background: var(--Dark-Grayish-Blue);
+  padding: 25px;
+  position: relative;
+  width: 650px;
+}
+
+.card p {
+  color: var(--Neon-Green);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+h1#advice-api {
+  color: var(--Light-Cyan);
+    margin: 15px 0;
+    font-size: 28px;
+}
+.mobile {
+  display: none;
+}
+.desktop {
+  margin: 20px auto;
+}
+.card .image {
+  position: relative;
+  margin-top: 20px;
+}
+.card .image::before {
+  content: "";
+  position: absolute;
+  background: var(--Neon-Green);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateX(-50%);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.card .image:hover::before {
+  box-shadow: 1px 1px 20px var(--Neon-Green);
+}
+.card .image img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  padding: 10px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  cursor: pointer;
+}
+
+
+/* media */
+@media (max-width: 768px) {
+  .card {
+    width: 450px;
+  }
+  .mobile {
+    display: block;
+    margin: 20px auto;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .card {
+    width: 90%;
+  }
+}
